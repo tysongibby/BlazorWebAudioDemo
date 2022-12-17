@@ -1,10 +1,7 @@
-﻿@*https://www.w3schools.com/tags/tag_audio.asp*@
-@*https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement*@
+﻿
 <audio id="audioCtrl" src="@AudioFilePath" controls="@ShowControls" loop="@Loop" controlsList="@controlList" >@NotSupported</audio>
 <br />
 <btn id="playBtn" class="btn btn-primary" @onclick="TogglePlay">@playBtnText</btn>
-
-@*https://learn.microsoft.com/en-us/aspnet/core/blazor/javascript-interoperability/call-javascript-from-dotnet?view=aspnetcore-7.0#capture-references-to-elements*@
 
 @code {
     [Parameter]
