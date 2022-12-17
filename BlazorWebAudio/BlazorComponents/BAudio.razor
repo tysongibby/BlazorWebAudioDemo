@@ -1,0 +1,40 @@
+﻿@*https://www.w3schools.com/tags/tag_audio.asp*@
+<audio id="audioCtrl" src="@AudioFilePath" controls="@ShowControls" loop="@Loop" controlsList="@controlList" >@NotSupported</audio>
+
+@*https://learn.microsoft.com/en-us/aspnet/core/blazor/javascript-interoperability/call-javascript-from-dotnet?view=aspnetcore-7.0#capture-references-to-elements*@
+
+@code {
+    [Parameter]
+    public string? AudioFilePath { get; set; }
+    [Parameter]
+    public bool Loop { get; set; } = false;
+    [Parameter]
+    public bool AllowDownload { get; set; } = false;
+    [Parameter]
+    public bool AllowPlaybackRate { get; set; } = true;
+    [Parameter]
+    public bool ShowControls { get; set; } = true;
+    [Parameter]
+    public string NotSupported { get; set; } = "Your browser does not support HTML 5 media or it does not support this audio file type.";
+
+    private string controlList = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (!AllowDownload)
+        {
+            controlList = controlList + "nodownload ";
+        }
+        if (!AllowPlaybackRate)
+        {
+            controlList = controlList + "noplaybackrate ";
+        }
+    }
+
+
+
+    
+
+
+}
