@@ -1,4 +1,8 @@
 ﻿@page "/"
-@using BlazorWebAudio.BlazorComponents
+@using BlazorWebAudio.Shared.Components;
+@using BlazorWebAudio.Shared.Models;
 
-<BAudio AudioFilePath="/audiofiles/Drive.mp3" ></BAudio>
+<EAudio id="basic" AudioFilePath="/AudioFiles/Drive.mp3" />
+<br />
+
+@*<EAudioAdvanced Id="audioCtrl" PlayButtonId="playBtn" AudioFilePath="/AudioFiles/WhenImGone.mp3" FileType="AudioFileType.mp3"/>*@

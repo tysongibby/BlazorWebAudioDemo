@@ -1,11 +1,27 @@
-﻿
-<audio id="audioCtrl" src="@AudioFilePath" controls="@ShowControls" loop="@Loop" controlsList="@controlList" >@NotSupported</audio>
+﻿@using BlazorWebAudio.Shared.Models;
+
+<audio id="@Id" src="@AudioFilePath" controls="@ShowControls" loop="@Loop" controlsList="@controlList" autoplay="@AutoPlay">
+    <source src="@AudioFilePath" type="audio/@FileType.ToString()" />
+    @if (String.IsNullOrWhiteSpace(FileTypeString))
+    {
+    <source src = "@AudioFilePath" />
+    }
+    else
+    {
+    <source src = "@AudioFilePath" type = "@FileTypeString" />
+    }
+    <p>Not supported</p>
+</audio>
 <br />
-<btn id="playBtn" class="btn btn-primary" @onclick="TogglePlay">@playBtnText</btn>
+<btn id="@PlayButtonId" class="btn btn-primary" @onclick="TogglePlay">@playBtnText</btn>
 
 @code {
     [Parameter]
-    public string? AudioFilePath { get; set; }
+    public string Id { get; set; }
+    [Parameter]
+    public string PlayButtonId { get; set; }
+    [Parameter]
+    public string AudioFilePath { get; set; }
     [Parameter]
     public bool Loop { get; set; } = false;
     [Parameter]
@@ -15,12 +31,17 @@
     [Parameter]
     public bool ShowControls { get; set; } = true;
     [Parameter]
+    public AudioFileType FileType { get; set; } = 0;
+    [Parameter]
+    public bool AutoPlay { get; set; } = false;
+    [Parameter]
     public string NotSupported { get; set; } = "Your browser does not support HTML 5 media or it does not support this audio file type.";
+    
+    public string FileTypeString { get; set; } = string.Empty;
 
     private string controlList = string.Empty;
-
-    private bool play = true;
     private string playBtnText = "Play";
+    private bool play = false;
 
     protected override void OnInitialized()
     {
@@ -51,10 +72,6 @@
             playBtnText = "Play";
         }
     }
-
-
-
-    
-
+ 
 
 }

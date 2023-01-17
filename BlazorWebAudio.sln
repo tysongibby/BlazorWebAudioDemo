@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericRepositoryForEfCore", "..\GenericRepositoryForEfCore\GenericRepositoryForEfCore\GenericRepositoryForEfCore.csproj", "{CDD5D793-6ABB-40B1-B8FC-D5EEFBEAF3DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{9880AD3E-3B75-414D-AE04-BC3DDFB81789}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9880AD3E-3B75-414D-AE04-BC3DDFB81789}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9880AD3E-3B75-414D-AE04-BC3DDFB81789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD5D793-6ABB-40B1-B8FC-D5EEFBEAF3DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD5D793-6ABB-40B1-B8FC-D5EEFBEAF3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD5D793-6ABB-40B1-B8FC-D5EEFBEAF3DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD5D793-6ABB-40B1-B8FC-D5EEFBEAF3DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
